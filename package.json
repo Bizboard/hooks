@@ -1,5 +1,11 @@
 {
   "name": "hooks",
-  "version": "18.4.0",
-  "description": "Bizboard Development Workflow: Git Hooks"
+  "version": "18.4.1",
+  "description": "Bizboard Development Workflow: Git Hooks",
+  "scripts": {
+    "install": "node sethooks.js"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.1"
+  }
 }
