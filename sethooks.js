@@ -3,7 +3,7 @@ const path = require('path');
 
 try {
 
-  fs.createReadStream('./files/.eslintrc').pipe(fs.createWriteStream(path.join(process.env.INIT_CWD, '.eslintrc')));
+  fs.createReadStream(path.join(__dirname, './files/.eslintrc')).pipe(fs.createWriteStream(path.join(process.env.INIT_CWD, '.eslintrc')));
 
   let projectPackageUri = path.join(process.env.INIT_CWD, './package.json');
   console.log(projectPackageUri);
