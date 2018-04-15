@@ -3,6 +3,7 @@ const path = require('path');
 
 try {
   let projectPackageUri = path.join(process.cwd(), './package.json');
+  console.log(projectPackageUri);
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   if (!appPackage["husky"]) {
     appPackage["husky"] = {};

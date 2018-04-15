@@ -1,6 +1,6 @@
 {
   "name": "hooks",
-  "version": "18.4.1",
+  "version": "18.4.3",
   "description": "Bizboard Development Workflow: Git Hooks",
   "scripts": {
     "install": "node sethooks.js"
