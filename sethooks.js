@@ -6,7 +6,12 @@ try {
   console.log(projectPackageUri);
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   if (!appPackage["husky"]) {
-    appPackage["husky"] = {};
+    appPackage["husky"] = {
+      "hooks": {
+        "pre-commit": "./node_modules/hooks/precommit.sh",
+
+      }
+    };
   }
   let content = JSON.stringify(appPackage, null, 2);
   fs.writeFileSync(projectPackageUri, content);
