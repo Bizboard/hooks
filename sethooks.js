@@ -1,11 +1,14 @@
 const fs = require('fs');
+const path = require('path');
 
 try {
-  let appPackage = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+  let projectPackageUri = path.join(process.cwd(), './package.json');
+  let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   if (!appPackage["husky"]) {
     appPackage["husky"] = {};
   }
-  fs.writeFileSync('./package.json', JSON.stringify(appPackage));
+  let content = JSON.stringify(appPackage, null, 2);
+  fs.writeFileSync(projectPackageUri, content);
 } catch (e) {
   // eslint-disable-next-line no-console
   console.error(e);
