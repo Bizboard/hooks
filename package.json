@@ -5,7 +5,7 @@
   "scripts": {
     "install": "node sethooks.js"
   },
-  "devDependencies": {
+  "dependencies": {
     "husky": "^1.0.0-rc.1"
   }
 }
