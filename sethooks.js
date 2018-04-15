@@ -2,12 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 try {
-  console.log(path.join(__dirname, './files/.eslintrc'));
 
   fs.createReadStream(path.join(__dirname, './files/.eslintrc')).pipe(fs.createWriteStream(path.join(process.env.INIT_CWD, '.eslintrc')));
 
   let projectPackageUri = path.join(process.env.INIT_CWD, './package.json');
-  console.log(projectPackageUri);
+
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   if (!appPackage["husky"]) {
     appPackage["husky"] = {
