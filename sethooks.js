@@ -5,7 +5,7 @@ try {
 
   fs.readdir('./files', function(err, items) {
     for (var i = 0; i < items.length; i++) {
-      fs.createReadStream(path.combine('./', items[i])).pipe(fs.createWriteStream(path.join(process.env.INIT_CWD, items[i])));
+      fs.createReadStream(path.join('./', items[i])).pipe(fs.createWriteStream(path.join(process.env.INIT_CWD, items[i])));
     }
   });
 
