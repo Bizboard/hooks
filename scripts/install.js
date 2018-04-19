@@ -6,6 +6,7 @@ const questions = require('./lib/questions.js');
 const tasks = require('./lib/tasks.js');
 
 async function install() {
+  let projectPackageUri = path.join(process.env.INIT_CWD, './package.json');
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   if (appPackage.name==="hooks")return;
 
@@ -20,7 +21,6 @@ async function install() {
 
     shell.mkdir('-p', path.join(process.env.INIT_CWD, '.bizboard'));
 
-    let projectPackageUri = path.join(process.env.INIT_CWD, './package.json');
     if (!appPackage["husky"]) {
       appPackage["husky"] = {
         "hooks": {
