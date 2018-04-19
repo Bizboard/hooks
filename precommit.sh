@@ -1,8 +1,13 @@
 #!/bin/sh
 # pre-commit
 # Bizboard Development Workflow
-if ! type "eslint" > /dev/null; then
-  sudo npm install -g eslint
-fi
+node ./.bizboard/precommit.js
 
-eslint .
+
+
+
+
+
+# Bump version
+#node
+#git log -1 HEAD --format=%H | cut -c1-7

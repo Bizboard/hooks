@@ -2,10 +2,12 @@
   "name": "hooks",
   "version": "18.4.7",
   "description": "Bizboard Development Workflow: Git Hooks",
-  "scripts": {
-    "install": "node sethooks.js"
-  },
+  "scripts": {},
   "dependencies": {
-    "husky": "^1.0.0-rc.1"
+    "babel-eslint": "^8.2.3",
+    "colors": "^1.2.1",
+    "husky": "^1.0.0-rc.1",
+    "prompt": "^1.0.0",
+    "shelljs": "^0.8.1"
   }
 }
