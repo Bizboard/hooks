@@ -2,14 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
 const colors = require('colors');
-const questions = require('./questions.js');
-const tasks = require('./tasks.js');
+const questions = require('./lib/questions.js');
+const tasks = require('./lib/tasks.js');
 
 
-let precommit = async () => {
+async function precommit() {
   try {
-    let y = await tasks.exec('ls', 'lister');
-    let answer = await questions.yesNoQuestion('Do you use docker?');
+    let y = await tasks.exec('eslint .', 'eslint');
   }
   catch (ex)
   {
@@ -18,11 +17,3 @@ let precommit = async () => {
 }
 
 precommit();
-
-/*
-let collect = async () => {
-  let answer = await questions.yesNoQuestion("Would you like to dockerize?");
-  console.log(answer);
-}
-collect();
-*/

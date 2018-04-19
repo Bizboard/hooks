@@ -1,6 +1,16 @@
 {
   "name": "hooks",
   "version": "18.4.19",
+  "author": {
+    "name": "Hans van den Akker",
+    "email": "hans@deakkertjes.nl",
+    "url": "https://www.bizboard.nl/team/hans-van-den-akker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Bizboard/hooks.git"
+  },
+  "license": "MIT",
   "description": "Bizboard Development Workflow: Git Hooks",
   "scripts": {
     "preinstall": "./prepare.sh",
