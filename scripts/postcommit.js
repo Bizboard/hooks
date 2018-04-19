@@ -5,12 +5,11 @@ const colors = require('colors');
 const questions = require('./questions.js');
 const tasks = require('./tasks.js');
 
-console.log(process.cwd());
-
 
 let precommit = async () => {
   try {
-    let y = await tasks.exec('eslint .', 'linter');
+    let y = await tasks.exec('ls', 'lister');
+    let answer = await questions.yesNoQuestion('Do you use docker?');
   }
   catch (ex)
   {

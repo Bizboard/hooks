@@ -1,8 +1,11 @@
 {
   "name": "hooks",
-  "version": "18.4.7",
+  "version": "18.4.19",
   "description": "Bizboard Development Workflow: Git Hooks",
-  "scripts": {},
+  "scripts": {
+    "preinstall": "./prepare.sh",
+    "install": "node ./scripts/install.js"
+  },
   "dependencies": {
     "babel-eslint": "^8.2.3",
     "colors": "^1.2.1",

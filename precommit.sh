@@ -1,12 +1,6 @@
 #!/bin/sh
-# pre-commit
-# Bizboard Development Workflow
-node ./.bizboard/precommit.js
-
-
-
-
-
+# pre-commit - Bizboard Development Workflow
+node ./scripts/precommit.js
 
 # Bump version
 #node
