@@ -14,6 +14,10 @@ async function install() {
   //if (appPackage.name==="hooks") return;
 
   try {
+    if (shell.ls('~/.atom/packages/linter-eslint').code==0) {
+      await tasks.exec('npm i babel-eslint --prefix ~/.atom/packages/linter-eslint', 'babel-eslint for Atom installer');
+    }
+
     let docker = await questions.yesNoQuestion("Is this a project with Dockerfile?");
     if (docker) {
       shell.cat(path.join(__dirname, '../files/.dockerignore')).toEnd(path.join(projectRoot, '.dockerignore'));
