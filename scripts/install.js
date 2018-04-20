@@ -4,10 +4,11 @@ const shell = require('shelljs');
 const colors = require('colors');
 const questions = require('./lib/questions.js');
 const tasks = require('./lib/tasks.js');
+const utils = require('./lib/utils.js');
 
 async function install() {
 
-  let projectRoot = utils.cwd(); 
+  let projectRoot = utils.cwd();
   let projectPackageUri = path.join(projectRoot, './package.json');
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   //if (appPackage.name==="hooks") return;
