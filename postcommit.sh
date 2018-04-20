@@ -1,3 +1,4 @@
 #!/bin/bash
 # pre-commit - Bizboard Development Workflow
-node ./scripts/postcommit.js
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+node $DIR/scripts/postcommit.js

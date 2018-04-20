@@ -1,7 +1,4 @@
 #!/bin/bash
 # pre-commit - Bizboard Development Workflow
-node ./scripts/precommit.js
-
-# Bump version
-#node
-#git log -1 HEAD --format=%H | cut -c1-7
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+node $DIR/scripts/precommit.js
