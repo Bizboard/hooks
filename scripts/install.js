@@ -14,7 +14,7 @@ async function install() {
   try {
     let docker = await questions.yesNoQuestion("Is this a project with Dockerfile?");
     if (docker) {
-      shell.cp(path.join(__dirname, '../files/.dockerignore'), path.join(projectRoot, '.dockerignore'));
+      shell.cat(path.join(__dirname, '../files/.dockerignore')).to(path.join(projectRoot, '.dockerignore'));
     }
 
     let copyFiles = await questions.yesNoQuestion("Is this an empty project?");
