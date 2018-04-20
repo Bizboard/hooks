@@ -8,7 +8,7 @@ const utils = require('./lib/utils.js');
 
 async function preinstall() {
   let projectRoot = utils.getProjectRoot();
-
+  
   if (!shell.which('eslint')) {
     await tasks.exec('sudo npm install -g eslint', 'eslint');
   }
