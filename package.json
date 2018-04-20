@@ -13,7 +13,7 @@
   "license": "MIT",
   "description": "Bizboard Development Workflow: Git Hooks",
   "scripts": {
-    "preinstall": "./prepare.sh",
+    "preinstall": "node ./scripts/preinstall.js",
     "install": "node ./scripts/install.js"
   },
   "dependencies": {
