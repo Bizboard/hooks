@@ -26,14 +26,13 @@ async function install() {
       shell.mkdir('-p', path.join(projectRoot, '.bizboard'));
     }
 
-    if (!appPackage["husky"]) {
-      appPackage["husky"] = {
-        "hooks": {
-          "pre-commit": "./node_modules/hooks/precommit.sh",
-          "post-commit": "./node_modules/hooks/postcommit.sh"
-        }
-      };
-    }
+    appPackage["husky"] = {
+      "hooks": {
+        "pre-commit": "./node_modules/hooks/precommit.sh",
+        "post-commit": "./node_modules/hooks/postcommit.sh"
+      }
+    };
+
     let content = JSON.stringify(appPackage, null, 2);
     fs.writeFileSync(projectPackageUri, content);
 
