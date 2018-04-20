@@ -16,8 +16,11 @@ function getYesNoQuestion(q) {
     }, function (err, result) {
       if (err) reject(err);
       else {
-        if (result.answer.toLowerCase() == 'y' || result.answer.toLowerCase() == 'n') {
-          resolve(result.answer);
+        if (result.answer.toLowerCase() == 'y') {
+          resolve(true);
+        }
+        else if (result.answer.toLowerCase() == 'n') {
+          resolve(false);
         }
         else {
           reject('Invalid response');

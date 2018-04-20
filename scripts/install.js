@@ -6,20 +6,23 @@ const questions = require('./lib/questions.js');
 const tasks = require('./lib/tasks.js');
 
 async function install() {
-  let projectPackageUri = path.join(process.env.INIT_CWD, './package.json');
+  let projectRoot = process.env.INIT_CWD || process.cwd();
+  let projectPackageUri = path.join(projectRoot, './package.json');
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
-  if (appPackage.name==="hooks")return;
+  //if (appPackage.name==="hooks") return;
 
   try {
     let docker = await questions.yesNoQuestion("Is this a project with Dockerfile?");
     if (docker) {
-      shell.cp(path.join(__dirname, './files/.dockerignore'), path.join(process.env.INIT_CWD, '.dockerignore'));
+      shell.cp(path.join(__dirname, '../files/.dockerignore'), path.join(projectRoot, '.dockerignore'));
     }
 
-    shell.cat(path.join(__dirname, './files/.gitignore')).to(path.join(process.env.INIT_CWD, '.eslintrc'));
-    shell.cp(path.join(__dirname, './files/.eslintrc'), path.join(process.env.INIT_CWD, '.eslintrc'));
-
-    shell.mkdir('-p', path.join(process.env.INIT_CWD, '.bizboard'));
+    let copyFiles = await questions.yesNoQuestion("Is this an empty project?");
+    if (copyFiles) {
+      shell.cat(path.join(__dirname, '../files/.gitignore')).to(path.join(projectRoot, '.gitignore'));
+      shell.cp(path.join(__dirname, '../files/.eslintrc'), path.join(projectRoot, '.eslintrc'));
+      shell.mkdir('-p', path.join(projectRoot, '.bizboard'));
+    }
 
     if (!appPackage["husky"]) {
       appPackage["husky"] = {
