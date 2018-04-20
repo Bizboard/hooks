@@ -10,7 +10,7 @@ module.exports = {
     else {
       console.log("using resolve at", process.cwd());
       let cwd = nextDir || process.cwd();
-      let parentRoot = path.join(cwd, '../../');
+      let parentRoot = path.join(cwd, '../');
       if (shell.ls(path.join(parentRoot, './package.json')).code==0) {
         return parentRoot;
       }
