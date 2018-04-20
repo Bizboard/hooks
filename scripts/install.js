@@ -19,7 +19,7 @@ async function install() {
 
     let copyFiles = await questions.yesNoQuestion("Is this an empty project?");
     if (copyFiles) {
-      shell.cat(path.join(__dirname, '../files/.gitignore')).to(path.join(projectRoot, '.gitignore'));
+      //shell.cat(path.join(__dirname, '../files/.gitignore')).to(path.join(projectRoot, '.gitignore'));
       shell.cp(path.join(__dirname, '../files/.eslintrc'), path.join(projectRoot, '.eslintrc'));
       shell.mkdir('-p', path.join(projectRoot, '.bizboard'));
     }
