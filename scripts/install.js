@@ -7,7 +7,7 @@ const tasks = require('./lib/tasks.js');
 
 async function install() {
 
-  let projectRoot = utils.getProjectRoot(); 
+  let projectRoot = utils.cwd(); 
   let projectPackageUri = path.join(projectRoot, './package.json');
   let appPackage = JSON.parse(fs.readFileSync(projectPackageUri, 'utf8'));
   //if (appPackage.name==="hooks") return;
