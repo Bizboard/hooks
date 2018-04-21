@@ -2,7 +2,8 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "ecmaFeatures": {
     "modules": true
@@ -121,7 +122,7 @@
 
     // disallow unnecessary function binding
     "no-extra-bind": "error",
-    
+
     // disallow creation of functions within loops
     "no-loop-func": "error",
 
